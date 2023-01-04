@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+
+  --bg-color: #E1E1E6;
+  --text-color: #323238; 
+  --second-color: #FFFFFF;
+  --sound-button-bg-color: #E1E1E6;
+  --sound-on-button-bg-color: #02799D;
+}
+body {
+  background-color: var(--bg-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+main {
+  margin-top: -5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.timer {
+  display: flex;
+  flex-direction: column;
+  width: 28rem;
+  gap: 2rem;
+}
+.display {
+  font-size: 11rem;
+  display: flex;
+}
+.controls {
+  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.controls button {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  width: 48px;
+  border-radius: 91px;
+  background: #E1E1E6;
+  box-shadow:  5px 5px 10px #b4b4b8,
+  -5px -5px 10px #ffffff;
+}
+.controls button svg {
+  transition: all .2s;
+}
+.controls button:hover svg {
+  transform: scale(1.2);
+}
+.sound-wrapper {
+  display: grid;
+  grid-template-areas: 'A B'
+  'C D' ;
+  place-items: center;
+  row-gap: 2.4rem;
+}
+.sound-wrapper button {
+  width: 10.8rem;
+  height: 12.2rem;
+  background-color: var(--sound-button-bg-color);
+  border-radius: 1.6rem;
+  box-shadow:  8px 8px 16px #b4b4b8,
+             -8px -8px 16px #ffffff;
+
+}
+.sound-wrapper button svg {
+  transform: scale(.8);
+  transition: all .2s;
+}
+.sound-wrapper button:hover svg {
+  transform: scale(0.9);
+} 
+.forest {
+  grid-area: 'A';
+}
+.rain {
+  grid-area: 'B';
+}
+.coffehouse {
+  grid-area: 'C';
+}
+.fireplace {
+  grid-area: 'D';
+}
+button.hide {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .timer {
+    width: 32.1rem;
+  }  
+  .display {
+    font-size: 12.6rem;
+  }
+  .sound-wrapper {
+    row-gap: 4rem;
+    column-gap: 2.4rem;
+  }
+  .sound-wrapper button {
+    width: 13.8rem;
+    height: 15.2rem;
+    border-radius: 2.4rem;
+  }
+  .sound-wrapper button svg {
+    transform: scale(1);
+  }
+  .sound-wrapper button:hover svg {
+    transform: scale(1.1);
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    flex-direction: row;
+    align-items: center;
+    gap: 19.2rem
+  }
+  .sound-wrapper {
+    row-gap: 4rem;
+    column-gap: 4rem;
+  }
+}
